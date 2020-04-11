@@ -48,7 +48,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: prometheus-server
-  namespace: _amq_
+  namespace: amq
 
 ---
 apiVersion: extensions/v1beta1
@@ -112,7 +112,7 @@ data:
           regex: alertmanager
           action: keep
         - source_labels: [__meta_kubernetes_namespace]
-          regex: _amq_
+          regex: amq
           action: keep
         - source_labels: [__meta_kubernetes_pod_container_port_number]
           regex:
